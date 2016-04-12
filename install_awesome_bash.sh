@@ -7,8 +7,8 @@ echo "If not there yet, add the code to read the bash_awesome script"
 
 if grep -q "bash_awesome" ~/.bashrc; then
 cat >~/.bashrc <<EOL
-if [ -f ~/.bash_awesome ]; then
-    . ~/.bash_awesome
+if [ -f ~/.bash_awesome/bashrcs/bash_awesome ]; then
+    . ~/.bash_awesome/bashrcs/bash_awesome
 fi
 EOL
 fi
