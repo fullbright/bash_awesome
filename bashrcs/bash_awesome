@@ -6,7 +6,7 @@
 ###### File listing
 
 alias ll="ls -lhA"
-alias ls="ls -CF"
+alias ls="ls -CF --color=auto"
 
 # Anticipate typos errors
 alias sl="ls"
