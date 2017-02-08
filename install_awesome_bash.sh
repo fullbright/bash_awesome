@@ -17,6 +17,14 @@ fi
 EOL
 
     echo "Installed the Awesome bash configuration successfully! Enjoy :-)"
+    
+    echo "Install the history stat cron job for $(whoami) to get the history stats every month"
+    crontab -u $(whoami) -l > mycron
+    echo "0 0 1 * * bash ~/.bash_awesome/histats.sh" >> mycron
+    crontab -u $(whoami) mycron
+    rm mycron
+    echo "Done. Enjoy :-)"
 fi
+
 
 echo "Done."
