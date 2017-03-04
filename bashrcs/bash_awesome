@@ -5,16 +5,35 @@
 
 ###### File listing
 
-alias ll="ls -lhA"
+alias ll='ls -FGlAhp' # Preferred 'ls' implementation
 alias ls="ls -CF --color=auto"
 
 # Anticipate typos errors
 alias sl="ls"
 alias lsl="ls -lhFA | less"
 
+# -----------------------------
+# 2. MAKE TERMINAL BETTER
+# -----------------------------
+alias cp='cp -iv' # Preferred 'cp' implementation
+alias mv='mv -iv' # Preferred 'mv' implementation
+alias less='less -FSRXc' # Preferred 'less' implementation
+alias which='type -all' # which: Find executables
+alias path='echo -e ${PATH//:/\\n}' # path: Echo all executable Paths
+alias show_options='shopt' # Show_options: display bash options settings
+
+
 ####### Directory change
 alias cd..="cd .."
 alias ..="cd .."
+alias cd..='cd ../' # Go back 1 directory level (for fast typers)
+cd() { builtin cd "$@"; ll; } # Always list directory contents upon 'cd'
+alias ..='cd ../' # Go back 1 directory level
+alias ...='cd ../../' # Go back 2 directory levels
+alias .3='cd ../../../' # Go back 3 directory levels
+alias .4='cd ../../../../' # Go back 4 directory levels
+alias .5='cd ../../../../../' # Go back 5 directory levels
+alias .6='cd ../../../../../../' # Go back 6 directory levels
 
 ####### Searching and finding
 alias fhere="find . -name "
@@ -29,6 +48,7 @@ alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
 
 ###### Miscellaneous Aliases
 alias mkdir="mkdir -pv"
+mcd () { mkdir -p "$1" && cd "$1"; } # mcd: Makes new Dir and jumps inside
 alias wget="wget -c"
 alias histg="history | grep"
 alias myip="curl http://ipecho.net/plain; echo"
