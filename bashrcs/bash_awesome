@@ -117,3 +117,9 @@ alias docker-clean-images=dockercleanimages
 # A tool to get a notification when a task finishes
 #. /usr/share/undistract-me/long-running.bash notify_when_long_running_commands_finish_install
 source /etc/profile.d/undistract-me.sh
+
+# Export xterm colors for vim
+export TERM=xterm-256color
+
+# Set the prompt, OS X like :)
+export PS1="\033[0;33m\h:\W \u\$ \e[m" 
